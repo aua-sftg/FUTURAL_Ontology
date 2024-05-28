@@ -1,0 +1,482 @@
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology> <http://www.w3.org/2002/07/owl#versionIRI> <http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology/1.0.0> .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the 1st version of the FUTURAL ontology." .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology> <http://www.w3.org/2000/01/rdf-schema#label> "FUTURAL ontology" .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/format
+<http://purl.org/dc/terms/format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/format> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<http://purl.org/dc/terms/format> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/DefinedTerm> .
+<http://purl.org/dc/terms/format> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/format> .
+_:genid1 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/DefinedTerm> .
+<http://purl.org/dc/terms/format> <http://www.w3.org/2000/01/rdf-schema#comment> "The file format, physical medium, or dimensions of the resource."@en .
+<http://purl.org/dc/terms/format> <http://www.w3.org/2000/01/rdf-schema#label> "format"@en .
+# 
+# http://purl.org/ontology/service#consumedBy
+<http://purl.org/ontology/service#consumedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/ontology/service#consumedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/ontology/service#consumes> .
+<http://purl.org/ontology/service#consumedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/service#Service> .
+<http://purl.org/ontology/service#consumedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/service#ServiceConsumer> .
+<http://purl.org/ontology/service#consumedBy> <http://www.w3.org/2000/01/rdf-schema#range> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/ontology/service#consumedBy> .
+_:genid2 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/ontology/service#ServiceConsumer> .
+<http://purl.org/ontology/service#consumedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Service instance that is consumed by a ServiceConsumer instance to this service consumer."@en .
+<http://purl.org/ontology/service#consumedBy> <http://www.w3.org/2000/01/rdf-schema#label> "consumedBy"@en .
+# 
+# http://purl.org/ontology/service#consumes
+<http://purl.org/ontology/service#consumes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/ontology/service#consumes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/service#ServiceConsumer> .
+<http://purl.org/ontology/service#consumes> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/service#Service> .
+<http://purl.org/ontology/service#consumes> <http://www.w3.org/2000/01/rdf-schema#range> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/ontology/service#consumes> .
+_:genid3 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid3 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/ontology/service#Service> .
+<http://purl.org/ontology/service#consumes> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a ServiceConsumer instance that consumes a Service instance to this service."@en .
+<http://purl.org/ontology/service#consumes> <http://www.w3.org/2000/01/rdf-schema#label> "consumes"@en .
+# 
+# http://purl.org/ontology/service#providedBy
+<http://purl.org/ontology/service#providedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/ontology/service#providedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/ontology/service#provides> .
+<http://purl.org/ontology/service#providedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/service#Service> .
+<http://purl.org/ontology/service#providedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/service#ServiceProvider> .
+<http://purl.org/ontology/service#providedBy> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/ontology/service#providedBy> .
+_:genid4 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/ontology/service#ServiceProvider> .
+<http://purl.org/ontology/service#providedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Service instance that is provided by a ServiceProvider instance to this service provider. In most cases this property can be used interchangeable with schema:provider."@en .
+# 
+# http://purl.org/ontology/service#provides
+<http://purl.org/ontology/service#provides> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/ontology/service#provides> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/service#ServiceProvider> .
+<http://purl.org/ontology/service#provides> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/service#Service> .
+<http://purl.org/ontology/service#provides> <http://www.w3.org/2000/01/rdf-schema#range> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/ontology/service#provides> .
+_:genid5 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid5 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/ontology/service#Service> .
+<http://purl.org/ontology/service#provides> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a ServiceProvider instance that provides a Service instance to this service."@en .
+<http://purl.org/ontology/service#provides> <http://www.w3.org/2000/01/rdf-schema#label> "provides"@en .
+# 
+# http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent
+<http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> <http://www.w3.org/2000/01/rdf-schema#range> <http://reference.data.gov.au/def/datasetOntology#Timelnterval> .
+<http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> <http://www.w3.org/2000/01/rdf-schema#range> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> .
+_:genid6 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid6 <http://www.w3.org/2002/07/owl#onClass> <http://reference.data.gov.au/def/datasetOntology#Timelnterval> .
+<http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> <http://www.w3.org/2000/01/rdf-schema#comment> "Temporal extent corresponds to the time interval within which all items in the dataset occur."@en .
+<http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> <http://www.w3.org/2000/01/rdf-schema#label> "hasTemporalExtent"@en .
+# 
+# http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Activity> .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> .
+_:genid7 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/prov#Activity> .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation."@en .
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#label> "wasGeneratedBy"@en .
+# 
+# http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Activity> .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Agent> .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#range> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasAssociatedWith> .
+_:genid8 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/prov#Agent> .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity."@en .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#label> "wasAssociatedWith"@en .
+# 
+# http://www.w3.org/ns/prov#wasStartedBy
+<http://www.w3.org/ns/prov#wasStartedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasStartedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/SearchAction> .
+<http://www.w3.org/ns/prov#wasStartedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/service#ServiceConsumer> .
+<http://www.w3.org/ns/prov#wasStartedBy> <http://www.w3.org/2000/01/rdf-schema#range> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasStartedBy> .
+_:genid9 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/ontology/service#ServiceConsumer> .
+<http://www.w3.org/ns/prov#wasStartedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Start is when an activity is deemed to have been started by an entity, known as trigger. The activity did not exist before its start. Any usage, generation, or invalidation involving an activity follows the activity's start. A start may refer to a trigger entity that set off the activity, or to an activity, known as starter, that generated the trigger."@en .
+<http://www.w3.org/ns/prov#wasStartedBy> <http://www.w3.org/2000/01/rdf-schema#label> "wasStartedBy"@en .
+# 
+# https://schema.org/about
+<https://schema.org/about> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/about> <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.org/keywords> .
+<https://schema.org/about> <http://www.w3.org/2002/07/owl#inverseOf> <https://schema.org/subjectOf> .
+<https://schema.org/about> <http://www.w3.org/2000/01/rdf-schema#domain> <http://edamontology.org/data_3786> .
+<https://schema.org/about> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/DefinedTerm> .
+<https://schema.org/about> <http://www.w3.org/2000/01/rdf-schema#range> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/about> .
+_:genid10 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/DefinedTerm> .
+<https://schema.org/about> <http://www.w3.org/2000/01/rdf-schema#comment> "The subject matter of the content."@en .
+<https://schema.org/about> <http://www.w3.org/2000/01/rdf-schema#label> "about"@en .
+# 
+# https://schema.org/affiliation
+<https://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/affiliation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Person> .
+<https://schema.org/affiliation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Organization> .
+<https://schema.org/affiliation> <http://www.w3.org/2000/01/rdf-schema#range> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/affiliation> .
+_:genid11 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/prov#Organization> .
+<https://schema.org/affiliation> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization that this person is affiliated with. For example, a school/university, a club, or a team."@en .
+<https://schema.org/affiliation> <http://www.w3.org/2000/01/rdf-schema#label> "affiliation"@en .
+# 
+# https://schema.org/areaServed
+<https://schema.org/areaServed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/areaServed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/service#Service> .
+<https://schema.org/areaServed> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Place> .
+<https://schema.org/areaServed> <http://www.w3.org/2000/01/rdf-schema#range> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/areaServed> .
+_:genid12 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Place> .
+<https://schema.org/areaServed> <http://www.w3.org/2000/01/rdf-schema#comment> "The geographic area where a service or offered item is provided."@en .
+<https://schema.org/areaServed> <http://www.w3.org/2000/01/rdf-schema#label> "areaServed"@en .
+# 
+# https://schema.org/comment
+<https://schema.org/comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/comment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/comment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ofo#Feedback> .
+<https://schema.org/comment> <http://www.w3.org/2000/01/rdf-schema#range> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/comment> .
+_:genid13 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ofo#Feedback> .
+<https://schema.org/comment> <http://www.w3.org/2000/01/rdf-schema#comment> "Comments, typically from users."@en .
+<https://schema.org/comment> <http://www.w3.org/2000/01/rdf-schema#label> "comment"@en .
+# 
+# https://schema.org/contentLocation
+<https://schema.org/contentLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/contentLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/contentLocation> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Place> .
+<https://schema.org/contentLocation> <http://www.w3.org/2000/01/rdf-schema#range> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/contentLocation> .
+_:genid14 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Place> .
+<https://schema.org/contentLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "The location depicted or described in the content. For example, the location in a photograph or painting."@en .
+<https://schema.org/contentLocation> <http://www.w3.org/2000/01/rdf-schema#label> "contentLocation"@en .
+# 
+# https://schema.org/creator
+<https://schema.org/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Agent> .
+<https://schema.org/creator> <http://www.w3.org/2000/01/rdf-schema#range> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/creator> .
+_:genid15 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/prov#Agent> .
+<https://schema.org/creator> <http://www.w3.org/2000/01/rdf-schema#comment> "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork."@en .
+<https://schema.org/creator> <http://www.w3.org/2000/01/rdf-schema#label> "creator"@en .
+# 
+# https://schema.org/diagram
+<https://schema.org/diagram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/diagram> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/diagram> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/ImageObject> .
+<https://schema.org/diagram> <http://www.w3.org/2000/01/rdf-schema#range> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/diagram> .
+_:genid16 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/ImageObject> .
+<https://schema.org/diagram> <http://www.w3.org/2000/01/rdf-schema#comment> "An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures."@en .
+<https://schema.org/diagram> <http://www.w3.org/2000/01/rdf-schema#label> "diagram"@en .
+# 
+# https://schema.org/distribution
+<https://schema.org/distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/DataDownload> .
+<https://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#range> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/distribution> .
+_:genid17 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/DataDownload> .
+<https://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#comment> "A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also DCAT on this point). Different distributions might include or exclude different subsets of the entire dataset, for example."@en .
+<https://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#label> "distribution"@en .
+# 
+# https://schema.org/inLanguage
+<https://schema.org/inLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/inLanguage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/inLanguage> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Language> .
+<https://schema.org/inLanguage> <http://www.w3.org/2000/01/rdf-schema#range> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/inLanguage> .
+_:genid18 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Language> .
+<https://schema.org/inLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en .
+<https://schema.org/inLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "inLanguage"@en .
+# 
+# https://schema.org/keywords
+<https://schema.org/keywords> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/DefinedTerm> .
+<https://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#range> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/keywords> .
+_:genid19 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/DefinedTerm> .
+<https://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#comment> "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property."@en .
+<https://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#label> "keywords"@en .
+# 
+# https://schema.org/potentialAction
+<https://schema.org/potentialAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Action> .
+<https://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#range> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/potentialAction> .
+_:genid20 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Action> .
+<https://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role."@en .
+<https://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#label> "potentialAction"@en .
+# 
+# https://schema.org/publisher
+<https://schema.org/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/publisher> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Dataset> .
+<https://schema.org/publisher> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Agent> .
+<https://schema.org/publisher> <http://www.w3.org/2000/01/rdf-schema#range> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/publisher> .
+_:genid21 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/prov#Agent> .
+<https://schema.org/publisher> <http://www.w3.org/2000/01/rdf-schema#comment> "The publisher of the creative work."@en .
+<https://schema.org/publisher> <http://www.w3.org/2000/01/rdf-schema#label> "publisher"@en .
+# 
+# https://schema.org/query
+<https://schema.org/query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/query> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/SearchAction> .
+<https://schema.org/query> <http://www.w3.org/2000/01/rdf-schema#range> <http://edamontology.org/data_3786> .
+<https://schema.org/query> <http://www.w3.org/2000/01/rdf-schema#range> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/query> .
+_:genid22 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onClass> <http://edamontology.org/data_3786> .
+<https://schema.org/query> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub property of instrument. The query used on this action."@en .
+<https://schema.org/query> <http://www.w3.org/2000/01/rdf-schema#label> "query"@en .
+# 
+# https://schema.org/subjectOf
+<https://schema.org/subjectOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DefinedTerm> .
+<https://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Dataset> .
+<https://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/subjectOf> .
+_:genid23 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Dataset> .
+<https://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A CreativeWork or Event about this Thing."@en .
+<https://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#label> "subjectOf"@en .
+# 
+# https://w3id.org/ofo#givesFeedback
+<https://w3id.org/ofo#givesFeedback> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ofo#givesFeedback> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/service#ServiceConsumer> .
+<https://w3id.org/ofo#givesFeedback> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ofo#Feedback> .
+<https://w3id.org/ofo#givesFeedback> <http://www.w3.org/2000/01/rdf-schema#range> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/ofo#givesFeedback> .
+_:genid24 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/ofo#Feedback> .
+<https://w3id.org/ofo#givesFeedback> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship between a person and the feedback given by this person."@en .
+<https://w3id.org/ofo#givesFeedback> <http://www.w3.org/2000/01/rdf-schema#label> "givesFeedback"@en .
+# 
+# https://www.w3.org/ns/dcat#servesdataset
+<https://www.w3.org/ns/dcat#servesdataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://www.w3.org/ns/dcat#servesdataset> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/service#Service> .
+<https://www.w3.org/ns/dcat#servesdataset> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Dataset> .
+<https://www.w3.org/ns/dcat#servesdataset> <http://www.w3.org/2000/01/rdf-schema#range> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://www.w3.org/ns/dcat#servesdataset> .
+_:genid25 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid25 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Dataset> .
+<https://www.w3.org/ns/dcat#servesdataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of data that this data service can distribute."@en .
+<https://www.w3.org/ns/dcat#servesdataset> <http://www.w3.org/2000/01/rdf-schema#label> "servesdataset"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://schema.org/abstract
+<https://schema.org/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/abstract> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<https://schema.org/abstract> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://schema.org/abstract> <http://www.w3.org/2000/01/rdf-schema#comment> "An abstract is a short description that summarizes a CreativeWork."@en .
+<https://schema.org/abstract> <http://www.w3.org/2000/01/rdf-schema#label> "abstract"@en .
+# 
+# https://schema.org/dateCreated
+<https://schema.org/dateCreated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<https://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which the CreativeWork was created or the item was added to a DataFeed."@en .
+<https://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#label> "dateCreated"@en .
+# 
+# https://schema.org/dateModified
+<https://schema.org/dateModified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<https://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en .
+<https://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#label> "dateModified"@en .
+# 
+# https://schema.org/downloadUrl
+<https://schema.org/downloadUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/downloadUrl> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<https://schema.org/downloadUrl> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://schema.org/downloadUrl> <http://www.w3.org/2000/01/rdf-schema#comment> "If the file can be downloaded, URL to download the binary."@en .
+<https://schema.org/downloadUrl> <http://www.w3.org/2000/01/rdf-schema#label> "downloadUrl"@en .
+# 
+# https://schema.org/license
+<https://schema.org/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<https://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#comment> "A license document that applies to this content, typically indicated by URL."@en .
+<https://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#label> "license"@en .
+# 
+# https://schema.org/size
+<https://schema.org/size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/size> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<https://schema.org/size> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://schema.org/size> <http://www.w3.org/2000/01/rdf-schema#comment> "A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable."@en .
+<https://schema.org/size> <http://www.w3.org/2000/01/rdf-schema#label> "size"@en .
+# 
+# https://schema.org/version
+<https://schema.org/version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/DataDownload> .
+<https://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#comment> "The version of the CreativeWork embodied by a specified resource."@en .
+<https://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#label> "version"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://edamontology.org/data_3786
+<http://edamontology.org/data_3786> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://edamontology.org/data_3786> <http://www.w3.org/2000/01/rdf-schema#comment> "A structured query, in form of a script, that defines a database search task."@en .
+<http://edamontology.org/data_3786> <http://www.w3.org/2000/01/rdf-schema#label> "Query script"@en .
+# 
+# http://purl.org/ontology/service#Service
+<http://purl.org/ontology/service#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/service#Service> <http://www.w3.org/2000/01/rdf-schema#comment> "A service is some action that is done for someone."@en .
+<http://purl.org/ontology/service#Service> <http://www.w3.org/2000/01/rdf-schema#label> "Service"@en .
+# 
+# http://purl.org/ontology/service#ServiceConsumer
+<http://purl.org/ontology/service#ServiceConsumer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/service#ServiceConsumer> <http://www.w3.org/2000/01/rdf-schema#comment> "A service consumer is an entity that requests or consumes a Service."@en .
+<http://purl.org/ontology/service#ServiceConsumer> <http://www.w3.org/2000/01/rdf-schema#label> "ServiceConsumer"@en .
+# 
+# http://purl.org/ontology/service#ServiceProvider
+<http://purl.org/ontology/service#ServiceProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/service#ServiceProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A service provider is an entity that is responsible for providing a Service."@en .
+<http://purl.org/ontology/service#ServiceProvider> <http://www.w3.org/2000/01/rdf-schema#label> "ServiceProvider"@en .
+# 
+# http://reference.data.gov.au/def/datasetOntology#Timelnterval
+<http://reference.data.gov.au/def/datasetOntology#Timelnterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://reference.data.gov.au/def/datasetOntology#Timelnterval> <http://www.w3.org/2000/01/rdf-schema#comment> "A Time Interval describes a time period (interval) during which data was collected or observations were made that are described in the Dataset."@en .
+<http://reference.data.gov.au/def/datasetOntology#Timelnterval> <http://www.w3.org/2000/01/rdf-schema#label> "Timelnterval"@en .
+# 
+# http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en .
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#label> "Activity"@en .
+# 
+# http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."@en .
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
+# 
+# http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
+<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization is a social or legal institution such as a company, society, etc."@en .
+<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
+# 
+# http://www.w3.org/ns/prov#Person
+<http://www.w3.org/ns/prov#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
+<http://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "Person agents are people."@en .
+<http://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# http://www.w3.org/ns/prov#SoftwareAgent
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "A software agent is running software."@en .
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#label> "SoftwareAgent"@en .
+# 
+# https://schema.org/Action
+<https://schema.org/Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Action> <http://www.w3.org/2000/01/rdf-schema#comment> "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role."@en .
+<https://schema.org/Action> <http://www.w3.org/2000/01/rdf-schema#label> "Action"@en .
+# 
+# https://schema.org/DataDownload
+<https://schema.org/DataDownload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/DataDownload> <http://www.w3.org/2000/01/rdf-schema#comment> "All or part of a Dataset in downloadable form."@en .
+<https://schema.org/DataDownload> <http://www.w3.org/2000/01/rdf-schema#label> "DataDownload"@en .
+# 
+# https://schema.org/Dataset
+<https://schema.org/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A body of structured information describing some topic(s) of interest."@en .
+<https://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset"@en .
+# 
+# https://schema.org/DefinedTerm
+<https://schema.org/DefinedTerm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/DefinedTerm> <http://www.w3.org/2000/01/rdf-schema#comment> "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term."@en .
+<https://schema.org/DefinedTerm> <http://www.w3.org/2000/01/rdf-schema#label> "DefinedTerm"@en .
+# 
+# https://schema.org/ImageObject
+<https://schema.org/ImageObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/ImageObject> <http://www.w3.org/2000/01/rdf-schema#comment> "An image file."@en .
+<https://schema.org/ImageObject> <http://www.w3.org/2000/01/rdf-schema#label> "ImageObject"@en .
+# 
+# https://schema.org/Language
+<https://schema.org/Language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Language> <http://www.w3.org/2000/01/rdf-schema#comment> "Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in BCP 47 can be used via the alternateName property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using ComputerLanguage."@en .
+<https://schema.org/Language> <http://www.w3.org/2000/01/rdf-schema#label> "Language"@en .
+# 
+# https://schema.org/Place
+<https://schema.org/Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Place> <http://www.w3.org/2000/01/rdf-schema#comment> "Entities that have a somewhat fixed, physical extension."@en .
+<https://schema.org/Place> <http://www.w3.org/2000/01/rdf-schema#label> "Place"@en .
+# 
+# https://schema.org/SearchAction
+<https://schema.org/SearchAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/SearchAction> <http://www.w3.org/2000/01/rdf-schema#comment> "The act of searching for an object."@en .
+<https://schema.org/SearchAction> <http://www.w3.org/2000/01/rdf-schema#label> "SearchAction"@en .
+# 
+# https://w3id.org/ofo#Feedback
+<https://w3id.org/ofo#Feedback> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ofo#Feedback> <http://www.w3.org/2000/01/rdf-schema#comment> "An act of producing a statement of opinion on the state of a property."@en .
+<https://w3id.org/ofo#Feedback> <http://www.w3.org/2000/01/rdf-schema#label> "Feedback"@en .
+# 
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

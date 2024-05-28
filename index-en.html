@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>FUTURAL ontology version 1.0.0</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology","name":"FUTURAL ontology version 1.0.0", "headline":"This is the 1st version of the FUTURAL ontology.", "datePublished":"28 May 2024", "version":"1.0.0", "author":[{"@type":"Person","name":"Matei","url":"Popovici"},{"@type":"Person","name":"Ciprian","url":"Dobre"}], "contributor":[{"@type":"Person","name":"Nikolaos","url":"Tantaroudas"},{"@type":"Person","name":"Panagiotis","url":"Stamatelopoulos"},{"@type":"Person","name":"Hercules","url":"Panoutsopoulos"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>FUTURAL ontology version 1.0.0</h1>
+<h2>Release  28 May 2024</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology/1.0.0">http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology/1.0.0</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology">http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.0</dd>
+<dt>Authors:</dt>
+<dd><a href="Popovici">Matei</a>, (<a href="https://upb.ro/en/">UPB</a>)</dd><dd><a href="Dobre">Ciprian</a>, (<a href="https://upb.ro/en/">UPB</a>)</dd>
+
+<dt>Contributors:</dt>
+<dd><a href="Tantaroudas">Nikolaos</a>, (<a href="https://www.iccs.gr/">ICCS</a>)</dd><dd><a href="Stamatelopoulos">Panagiotis</a>, (<a href="https://www2.aua.gr/en">AUA</a>)</dd><dd><a href="Panoutsopoulos">Hercules</a>, (<a href="https://www2.aua.gr/en">AUA</a>)</dd>
+
+<dt>Publisher:</dt>
+<dd><a href="Stamatelopoulos">Hercules</a>, (<a href="https://www2.aua.gr/en">AUA</a>)</dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="https://schema.org/">Schema.org</a></dd><dd><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a></dd><dd><a href="https://www.w3.org/TR/vocab-dcat-2/">Data Catalog Vocabulary (DCAT) - Version 2</a></dd><dd><a href="https://bioportal.bioontology.org/ontologies/EDAM">EDAM - Bioscientific data analysis ontology</a></dd><dd><a href="https://dini-ag-kim.github.io/service-ontology/service.html">The Service Ontlogy</a></dd><dd>Occupant Feedback Ontology</dd><dd><a href="https://www.w3.org/TR/prov-o/">The PROV Ontology</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-CC_BY_4.0-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Revision: 1.0.0. Retrieved from: http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology/1.0.0</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is the 1st version of the FUTURAL ontology.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[futural]</b></td><td>&lt;http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology&gt;</td></tr>
+<tr><td><b>schema</b></td><td>&lt;https://schema.org&gt;</td></tr>
+<tr><td><b>edam</b></td><td>&lt;http://edamontology.org&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>dcat2</b></td><td>&lt;https://www.w3.org/ns/dcat&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>service</b></td><td>&lt;http://purl.org/ontology/service&gt;</td></tr>
+<tr><td><b>datasetOntology</b></td><td>&lt;http://reference.data.gov.au/def/datasetOntology&gt;</td></tr>
+<tr><td><b>prov1</b></td><td>&lt;http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontologyhttp://www.w3.org/ns/prov%23&gt;</td></tr>
+<tr><td><b>ofo</b></td><td>&lt;https://w3id.org/ofo&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>dcat</b></td><td>&lt;http://www.w3.org/ns/dcat&gt;</td></tr>
+<tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">FUTURAL ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://schema.org/Action" title="https://schema.org/Action">Action</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/ofo#Feedback" title="https://w3id.org/ofo#Feedback">Feedback</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/ImageObject" title="https://schema.org/ImageObject">ImageObject</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/Language" title="https://schema.org/Language">Language</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#Organization" title="http://www.w3.org/ns/prov#Organization">Organization</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#Person" title="http://www.w3.org/ns/prov#Person">Person</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/Place" title="https://schema.org/Place">Place</a>
+   </li>
+   <li>
+      <a href="#http://edamontology.org/data_3786" title="http://edamontology.org/data_3786">Query script</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/SearchAction" title="https://schema.org/SearchAction">SearchAction</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/service#ServiceProvider" title="http://purl.org/ontology/service#ServiceProvider">ServiceProvider</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#SoftwareAgent" title="http://www.w3.org/ns/prov#SoftwareAgent">SoftwareAgent</a>
+   </li>
+   <li>
+      <a href="#http://reference.data.gov.au/def/datasetOntology#Timelnterval"
+         title="http://reference.data.gov.au/def/datasetOntology#Timelnterval">Timelnterval</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://schema.org/about" title="https://schema.org/about">about</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/affiliation" title="https://schema.org/affiliation">affiliation</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/areaServed" title="https://schema.org/areaServed">areaServed</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/comment" title="https://schema.org/comment">comment</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/service#consumedBy" title="http://purl.org/ontology/service#consumedBy">consumedBy</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/service#consumes" title="http://purl.org/ontology/service#consumes">consumes</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/contentLocation" title="https://schema.org/contentLocation">contentLocation</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/creator" title="https://schema.org/creator">creator</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/diagram" title="https://schema.org/diagram">diagram</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/distribution" title="https://schema.org/distribution">distribution</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/format" title="http://purl.org/dc/terms/format">format</a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/ofo#givesFeedback" title="https://w3id.org/ofo#givesFeedback">givesFeedback</a>
+   </li>
+   <li>
+      <a href="#http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent"
+         title="http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent">hasTemporalExtent</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/inLanguage" title="https://schema.org/inLanguage">inLanguage</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/keywords" title="https://schema.org/keywords">keywords</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/potentialAction" title="https://schema.org/potentialAction">potentialAction</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/service#providedBy" title="http://purl.org/ontology/service#providedBy">
+         <span>provided by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/service#provides" title="http://purl.org/ontology/service#provides">provides</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/publisher" title="https://schema.org/publisher">publisher</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/query" title="https://schema.org/query">query</a>
+   </li>
+   <li>
+      <a href="#https://www.w3.org/ns/dcat#servesdataset" title="https://www.w3.org/ns/dcat#servesdataset">servesdataset</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/subjectOf" title="https://schema.org/subjectOf">subjectOf</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#wasAssociatedWith" title="http://www.w3.org/ns/prov#wasAssociatedWith">wasAssociatedWith</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/provwasGeneratedBy"
+         title="http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy">wasGeneratedBy</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#wasStartedBy" title="http://www.w3.org/ns/prov#wasStartedBy">wasStartedBy</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://schema.org/abstract" title="https://schema.org/abstract">abstract</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/dateCreated" title="https://schema.org/dateCreated">dateCreated</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/dateModified" title="https://schema.org/dateModified">dateModified</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/downloadUrl" title="https://schema.org/downloadUrl">downloadUrl</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/license" title="https://schema.org/license">license</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/size" title="https://schema.org/size">size</a>
+   </li>
+   <li>
+      <a href="#https://schema.org/version" title="https://schema.org/version">version</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">FUTURAL ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for FUTURAL ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by FUTURAL ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://schema.org/Action" title="https://schema.org/Action">Action</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ofo#Feedback" title="https://w3id.org/ofo#Feedback">Feedback</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/ImageObject" title="https://schema.org/ImageObject">ImageObject</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/Language" title="https://schema.org/Language">Language</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#Organization" title="http://www.w3.org/ns/prov#Organization">Organization</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#Person" title="http://www.w3.org/ns/prov#Person">Person</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/Place" title="https://schema.org/Place">Place</a>
+      </li>
+      <li>
+         <a href="#http://edamontology.org/data_3786" title="http://edamontology.org/data_3786">Query script</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/SearchAction" title="https://schema.org/SearchAction">SearchAction</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/service#ServiceProvider" title="http://purl.org/ontology/service#ServiceProvider">ServiceProvider</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#SoftwareAgent" title="http://www.w3.org/ns/prov#SoftwareAgent">SoftwareAgent</a>
+      </li>
+      <li>
+         <a href="#http://reference.data.gov.au/def/datasetOntology#Timelnterval"
+            title="http://reference.data.gov.au/def/datasetOntology#Timelnterval">Timelnterval</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://schema.org/Action">
+      <h3>Action<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/Action</p>
+      <div class="comment">
+         <span class="markdown">An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/potentialAction" title="https://schema.org/potentialAction">potentialAction</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#Activity">
+      <h3>Activity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Activity</p>
+      <div class="comment">
+         <span class="markdown">An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#wasAssociatedWith" title="http://www.w3.org/ns/prov#wasAssociatedWith">wasAssociatedWith</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/provwasGeneratedBy"
+               title="http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy">wasGeneratedBy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#Agent">
+      <h3>Agent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Agent</p>
+      <div class="comment">
+         <span class="markdown">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#Organization" title="http://www.w3.org/ns/prov#Organization">Organization</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://www.w3.org/ns/prov#Person" title="http://www.w3.org/ns/prov#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://www.w3.org/ns/prov#SoftwareAgent" title="http://www.w3.org/ns/prov#SoftwareAgent">SoftwareAgent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/creator" title="https://schema.org/creator">creator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/publisher" title="https://schema.org/publisher">publisher</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasAssociatedWith" title="http://www.w3.org/ns/prov#wasAssociatedWith">wasAssociatedWith</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://schema.org/DataDownload">
+      <h3>DataDownload<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/DataDownload</p>
+      <div class="comment">
+         <span class="markdown">All or part of a Dataset in downloadable form.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://schema.org/abstract" title="https://schema.org/abstract">abstract</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://schema.org/dateCreated" title="https://schema.org/dateCreated">dateCreated</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://schema.org/dateModified" title="https://schema.org/dateModified">dateModified</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://schema.org/downloadUrl" title="https://schema.org/downloadUrl">downloadUrl</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://purl.org/dc/terms/format" title="http://purl.org/dc/terms/format">format</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/license" title="https://schema.org/license">license</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://schema.org/size" title="https://schema.org/size">size</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://schema.org/version" title="https://schema.org/version">version</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/distribution" title="https://schema.org/distribution">distribution</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://schema.org/Dataset">
+      <h3>Dataset<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/Dataset</p>
+      <div class="comment">
+         <span class="markdown">A body of structured information describing some topic(s) of interest.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://schema.org/comment" title="https://schema.org/comment">comment</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/contentLocation" title="https://schema.org/contentLocation">contentLocation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/creator" title="https://schema.org/creator">creator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/diagram" title="https://schema.org/diagram">diagram</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/distribution" title="https://schema.org/distribution">distribution</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent"
+               title="http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent">hasTemporalExtent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/inLanguage" title="https://schema.org/inLanguage">inLanguage</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/potentialAction" title="https://schema.org/potentialAction">potentialAction</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/publisher" title="https://schema.org/publisher">publisher</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/provwasGeneratedBy"
+               title="http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy">wasGeneratedBy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://www.w3.org/ns/dcat#servesdataset" title="https://www.w3.org/ns/dcat#servesdataset">servesdataset</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/subjectOf" title="https://schema.org/subjectOf">subjectOf</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://schema.org/DefinedTerm">
+      <h3>DefinedTerm<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/DefinedTerm</p>
+      <div class="comment">
+         <span class="markdown">A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://schema.org/subjectOf" title="https://schema.org/subjectOf">subjectOf</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/about" title="https://schema.org/about">about</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/dc/terms/format" title="http://purl.org/dc/terms/format">format</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/keywords" title="https://schema.org/keywords">keywords</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/ofo#Feedback">
+      <h3>Feedback<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ofo#Feedback</p>
+      <div class="comment">
+         <span class="markdown">An act of producing a statement of opinion on the state of a property.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/comment" title="https://schema.org/comment">comment</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/ofo#givesFeedback" title="https://w3id.org/ofo#givesFeedback">givesFeedback</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://schema.org/ImageObject">
+      <h3>ImageObject<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/ImageObject</p>
+      <div class="comment">
+         <span class="markdown">An image file.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/diagram" title="https://schema.org/diagram">diagram</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://schema.org/Language">
+      <h3>Language<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/Language</p>
+      <div class="comment">
+         <span class="markdown">Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in BCP 47 can be used via the alternateName property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using ComputerLanguage.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/inLanguage" title="https://schema.org/inLanguage">inLanguage</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#Organization">
+      <h3>Organization<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Organization</p>
+      <div class="comment">
+         <span class="markdown">An organization is a social or legal institution such as a company, society, etc.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/affiliation" title="https://schema.org/affiliation">affiliation</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#Person">
+      <h3>Person<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Person</p>
+      <div class="comment">
+         <span class="markdown">Person agents are people.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://schema.org/affiliation" title="https://schema.org/affiliation">affiliation</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://schema.org/Place">
+      <h3>Place<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/Place</p>
+      <div class="comment">
+         <span class="markdown">Entities that have a somewhat fixed, physical extension.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/areaServed" title="https://schema.org/areaServed">areaServed</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/contentLocation" title="https://schema.org/contentLocation">contentLocation</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://edamontology.org/data_3786">
+      <h3>Query script<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://edamontology.org/data_3786</p>
+      <div class="comment">
+         <span class="markdown">A structured query, in form of a script, that defines a database search task.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://schema.org/about" title="https://schema.org/about">about</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://schema.org/query" title="https://schema.org/query">query</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://schema.org/SearchAction">
+      <h3>SearchAction<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/SearchAction</p>
+      <div class="comment">
+         <span class="markdown">The act of searching for an object.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://schema.org/query" title="https://schema.org/query">query</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasStartedBy" title="http://www.w3.org/ns/prov#wasStartedBy">wasStartedBy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/service#Service">
+      <h3>Service<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/service#Service</p>
+      <div class="comment">
+         <span class="markdown">A service is some action that is done for someone.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://schema.org/areaServed" title="https://schema.org/areaServed">areaServed</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/ontology/service#consumedBy" title="http://purl.org/ontology/service#consumedBy">consumedBy</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/ontology/service#providedBy" title="http://purl.org/ontology/service#providedBy">provided by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://www.w3.org/ns/dcat#servesdataset" title="https://www.w3.org/ns/dcat#servesdataset">servesdataset</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://purl.org/ontology/service#consumes" title="http://purl.org/ontology/service#consumes">consumes</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/ontology/service#provides" title="http://purl.org/ontology/service#provides">provides</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/service#ServiceConsumer">
+      <h3>ServiceConsumer<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/service#ServiceConsumer</p>
+      <div class="comment">
+         <span class="markdown">A service consumer is an entity that requests or consumes a Service.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://purl.org/ontology/service#consumes" title="http://purl.org/ontology/service#consumes">consumes</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/ofo#givesFeedback" title="https://w3id.org/ofo#givesFeedback">givesFeedback</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://purl.org/ontology/service#consumedBy" title="http://purl.org/ontology/service#consumedBy">consumedBy</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#wasStartedBy" title="http://www.w3.org/ns/prov#wasStartedBy">wasStartedBy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/service#ServiceProvider">
+      <h3>ServiceProvider<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/service#ServiceProvider</p>
+      <div class="comment">
+         <span class="markdown">A service provider is an entity that is responsible for providing a Service.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://purl.org/ontology/service#provides" title="http://purl.org/ontology/service#provides">provides</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://purl.org/ontology/service#providedBy" title="http://purl.org/ontology/service#providedBy">provided by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#SoftwareAgent">
+      <h3>SoftwareAgent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#SoftwareAgent</p>
+      <div class="comment">
+         <span class="markdown">A software agent is running software.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://reference.data.gov.au/def/datasetOntology#Timelnterval">
+      <h3>Timelnterval<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://reference.data.gov.au/def/datasetOntology#Timelnterval</p>
+      <div class="comment">
+         <span class="markdown">A Time Interval describes a time period (interval) during which data was collected or observations were made that are described in the Dataset.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent"
+               title="http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent">hasTemporalExtent</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://schema.org/about" title="https://schema.org/about">about</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/affiliation" title="https://schema.org/affiliation">affiliation</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/areaServed" title="https://schema.org/areaServed">areaServed</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/comment" title="https://schema.org/comment">comment</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/service#consumedBy" title="http://purl.org/ontology/service#consumedBy">consumedBy</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/service#consumes" title="http://purl.org/ontology/service#consumes">consumes</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/contentLocation" title="https://schema.org/contentLocation">contentLocation</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/creator" title="https://schema.org/creator">creator</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/diagram" title="https://schema.org/diagram">diagram</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/distribution" title="https://schema.org/distribution">distribution</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/format" title="http://purl.org/dc/terms/format">format</a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/ofo#givesFeedback" title="https://w3id.org/ofo#givesFeedback">givesFeedback</a>
+      </li>
+      <li>
+         <a href="#http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent"
+            title="http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent">hasTemporalExtent</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/inLanguage" title="https://schema.org/inLanguage">inLanguage</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/keywords" title="https://schema.org/keywords">keywords</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/potentialAction" title="https://schema.org/potentialAction">potentialAction</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/service#providedBy" title="http://purl.org/ontology/service#providedBy">
+            <span>provided by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/service#provides" title="http://purl.org/ontology/service#provides">provides</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/publisher" title="https://schema.org/publisher">publisher</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/query" title="https://schema.org/query">query</a>
+      </li>
+      <li>
+         <a href="#https://www.w3.org/ns/dcat#servesdataset" title="https://www.w3.org/ns/dcat#servesdataset">servesdataset</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/subjectOf" title="https://schema.org/subjectOf">subjectOf</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#wasAssociatedWith" title="http://www.w3.org/ns/prov#wasAssociatedWith">wasAssociatedWith</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/provwasGeneratedBy"
+            title="http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy">wasGeneratedBy</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#wasStartedBy" title="http://www.w3.org/ns/prov#wasStartedBy">wasStartedBy</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://schema.org/about">
+      <h3>about<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/about</p>
+      <div class="comment">
+         <span class="markdown">The subject matter of the content.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://edamontology.org/data_3786" title="http://edamontology.org/data_3786">Query script</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/about" title="https://schema.org/about">about</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://schema.org/keywords" title="https://schema.org/keywords">keywords</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#https://schema.org/subjectOf" title="https://schema.org/subjectOf">subjectOf</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/affiliation">
+      <h3>affiliation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/affiliation</p>
+      <div class="comment">
+         <span class="markdown">An organization that this person is affiliated with. For example, a school/university, a club, or a team.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Person" title="http://www.w3.org/ns/prov#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Organization" title="http://www.w3.org/ns/prov#Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/affiliation" title="https://schema.org/affiliation">affiliation</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://www.w3.org/ns/prov#Organization" title="http://www.w3.org/ns/prov#Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/areaServed">
+      <h3>areaServed<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/areaServed</p>
+      <div class="comment">
+         <span class="markdown">The geographic area where a service or offered item is provided.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/Place" title="https://schema.org/Place">Place</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/areaServed" title="https://schema.org/areaServed">areaServed</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/Place" title="https://schema.org/Place">Place</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/comment">
+      <h3>comment<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/comment</p>
+      <div class="comment">
+         <span class="markdown">Comments, typically from users.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/ofo#Feedback" title="https://w3id.org/ofo#Feedback">Feedback</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/comment" title="https://schema.org/comment">comment</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://w3id.org/ofo#Feedback" title="https://w3id.org/ofo#Feedback">Feedback</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/service#consumedBy">
+      <h3>consumedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/service#consumedBy</p>
+      <div class="comment">
+         <span class="markdown">Relates a Service instance that is consumed by a ServiceConsumer instance to this service consumer.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://purl.org/ontology/service#consumedBy" title="http://purl.org/ontology/service#consumedBy">consumedBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#consumes" title="http://purl.org/ontology/service#consumes">consumes</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/service#consumes">
+      <h3>consumes<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/service#consumes</p>
+      <div class="comment">
+         <span class="markdown">Relates a ServiceConsumer instance that consumes a Service instance to this service.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://purl.org/ontology/service#consumes" title="http://purl.org/ontology/service#consumes">consumes</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#consumedBy" title="http://purl.org/ontology/service#consumedBy">consumedBy</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/contentLocation">
+      <h3>contentLocation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/contentLocation</p>
+      <div class="comment">
+         <span class="markdown">The location depicted or described in the content. For example, the location in a photograph or painting.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/Place" title="https://schema.org/Place">Place</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/contentLocation" title="https://schema.org/contentLocation">contentLocation</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/Place" title="https://schema.org/Place">Place</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/creator">
+      <h3>creator<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/creator</p>
+      <div class="comment">
+         <span class="markdown">The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/creator" title="https://schema.org/creator">creator</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/diagram">
+      <h3>diagram<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/diagram</p>
+      <div class="comment">
+         <span class="markdown">An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/ImageObject" title="https://schema.org/ImageObject">ImageObject</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/diagram" title="https://schema.org/diagram">diagram</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/ImageObject" title="https://schema.org/ImageObject">ImageObject</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/distribution">
+      <h3>distribution<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/distribution</p>
+      <div class="comment">
+         <span class="markdown">A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also DCAT on this point). Different distributions might include or exclude different subsets of the entire dataset, for example.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/distribution" title="https://schema.org/distribution">distribution</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/format">
+      <h3>format<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/format</p>
+      <div class="comment">
+         <span class="markdown">The file format, physical medium, or dimensions of the resource.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://purl.org/dc/terms/format" title="http://purl.org/dc/terms/format">format</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/ofo#givesFeedback">
+      <h3>givesFeedback<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/ofo#givesFeedback</p>
+      <div class="comment">
+         <span class="markdown">Relationship between a person and the feedback given by this person.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/ofo#Feedback" title="https://w3id.org/ofo#Feedback">Feedback</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://w3id.org/ofo#givesFeedback" title="https://w3id.org/ofo#givesFeedback">givesFeedback</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://w3id.org/ofo#Feedback" title="https://w3id.org/ofo#Feedback">Feedback</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent">
+      <h3>hasTemporalExtent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent</p>
+      <div class="comment">
+         <span class="markdown">Temporal extent corresponds to the time interval within which all items in the dataset occur.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://reference.data.gov.au/def/datasetOntology#Timelnterval"
+                  title="http://reference.data.gov.au/def/datasetOntology#Timelnterval">Timelnterval</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent"
+                  title="http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent">hasTemporalExtent</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#http://reference.data.gov.au/def/datasetOntology#Timelnterval"
+                  title="http://reference.data.gov.au/def/datasetOntology#Timelnterval">Timelnterval</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/inLanguage">
+      <h3>inLanguage<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/inLanguage</p>
+      <div class="comment">
+         <span class="markdown">The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/Language" title="https://schema.org/Language">Language</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/inLanguage" title="https://schema.org/inLanguage">inLanguage</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/Language" title="https://schema.org/Language">Language</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/keywords">
+      <h3>keywords<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/keywords</p>
+      <div class="comment">
+         <span class="markdown">Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/keywords" title="https://schema.org/keywords">keywords</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://schema.org/about" title="https://schema.org/about">about</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/potentialAction">
+      <h3>potentialAction<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/potentialAction</p>
+      <div class="comment">
+         <span class="markdown">Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/Action" title="https://schema.org/Action">Action</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/potentialAction" title="https://schema.org/potentialAction">potentialAction</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/Action" title="https://schema.org/Action">Action</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/service#providedBy">
+      <h3>provided by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/service#providedBy</p>
+      <div class="comment">
+         <span class="markdown">Relates a Service instance that is provided by a ServiceProvider instance to this service provider. In most cases this property can be used interchangeable with schema:provider.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#ServiceProvider" title="http://purl.org/ontology/service#ServiceProvider">ServiceProvider</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://purl.org/ontology/service#providedBy" title="http://purl.org/ontology/service#providedBy">provided by</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://purl.org/ontology/service#ServiceProvider" title="http://purl.org/ontology/service#ServiceProvider">ServiceProvider</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#provides" title="http://purl.org/ontology/service#provides">provides</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/service#provides">
+      <h3>provides<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/service#provides</p>
+      <div class="comment">
+         <span class="markdown">Relates a ServiceProvider instance that provides a Service instance to this service.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#ServiceProvider" title="http://purl.org/ontology/service#ServiceProvider">ServiceProvider</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://purl.org/ontology/service#provides" title="http://purl.org/ontology/service#provides">provides</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#providedBy" title="http://purl.org/ontology/service#providedBy">provided by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/publisher">
+      <h3>publisher<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/publisher</p>
+      <div class="comment">
+         <span class="markdown">The publisher of the creative work.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/publisher" title="https://schema.org/publisher">publisher</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/query">
+      <h3>query<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/query</p>
+      <div class="comment">
+         <span class="markdown">A sub property of instrument. The query used on this action.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/SearchAction" title="https://schema.org/SearchAction">SearchAction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://edamontology.org/data_3786" title="http://edamontology.org/data_3786">Query script</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/query" title="https://schema.org/query">query</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://edamontology.org/data_3786" title="http://edamontology.org/data_3786">Query script</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://www.w3.org/ns/dcat#servesdataset">
+      <h3>servesdataset<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://www.w3.org/ns/dcat#servesdataset</p>
+      <div class="comment">
+         <span class="markdown">A collection of data that this data service can distribute.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#Service" title="http://purl.org/ontology/service#Service">Service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://www.w3.org/ns/dcat#servesdataset" title="https://www.w3.org/ns/dcat#servesdataset">servesdataset</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/subjectOf">
+      <h3>subjectOf<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/subjectOf</p>
+      <div class="comment">
+         <span class="markdown">A CreativeWork or Event about this Thing.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DefinedTerm" title="https://schema.org/DefinedTerm">DefinedTerm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://schema.org/subjectOf" title="https://schema.org/subjectOf">subjectOf</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://schema.org/about" title="https://schema.org/about">about</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#wasAssociatedWith">
+      <h3>wasAssociatedWith<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#wasAssociatedWith</p>
+      <div class="comment">
+         <span class="markdown">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#wasAssociatedWith" title="http://www.w3.org/ns/prov#wasAssociatedWith">wasAssociatedWith</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/provwasGeneratedBy">
+      <h3>wasGeneratedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy</p>
+      <div class="comment">
+         <span class="markdown">Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/Dataset" title="https://schema.org/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://www.w3.org/ns/provwasGeneratedBy"
+                  title="http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy">wasGeneratedBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#wasStartedBy">
+      <h3>wasStartedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#wasStartedBy</p>
+      <div class="comment">
+         <span class="markdown">Start is when an activity is deemed to have been started by an entity, known as trigger. The activity did not exist before its start. Any usage, generation, or invalidation involving an activity follows the activity's start. A start may refer to a trigger entity that set off the activity, or to an activity, known as starter, that generated the trigger.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/SearchAction" title="https://schema.org/SearchAction">SearchAction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#wasStartedBy" title="http://www.w3.org/ns/prov#wasStartedBy">wasStartedBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">min</span> 1 <a href="#http://purl.org/ontology/service#ServiceConsumer" title="http://purl.org/ontology/service#ServiceConsumer">ServiceConsumer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://schema.org/abstract" title="https://schema.org/abstract">abstract</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/dateCreated" title="https://schema.org/dateCreated">dateCreated</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/dateModified" title="https://schema.org/dateModified">dateModified</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/downloadUrl" title="https://schema.org/downloadUrl">downloadUrl</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/license" title="https://schema.org/license">license</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/size" title="https://schema.org/size">size</a>
+      </li>
+      <li>
+         <a href="#https://schema.org/version" title="https://schema.org/version">version</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://schema.org/abstract">
+      <h3>abstract<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/abstract</p>
+      <div class="comment">
+         <span class="markdown">An abstract is a short description that summarizes a CreativeWork.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/dateCreated">
+      <h3>dateCreated<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/dateCreated</p>
+      <div class="comment">
+         <span class="markdown">The date on which the CreativeWork was created or the item was added to a DataFeed.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/dateModified">
+      <h3>dateModified<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/dateModified</p>
+      <div class="comment">
+         <span class="markdown">The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/downloadUrl">
+      <h3>downloadUrl<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/downloadUrl</p>
+      <div class="comment">
+         <span class="markdown">If the file can be downloaded, URL to download the binary.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/license">
+      <h3>license<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/license</p>
+      <div class="comment">
+         <span class="markdown">A license document that applies to this content, typically indicated by URL.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/size">
+      <h3>size<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/size</p>
+      <div class="comment">
+         <span class="markdown">A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://schema.org/version">
+      <h3>version<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://schema.org/version</p>
+      <div class="comment">
+         <span class="markdown">The version of the CreativeWork embodied by a specified resource.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://schema.org/DataDownload" title="https://schema.org/DataDownload">DataDownload</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

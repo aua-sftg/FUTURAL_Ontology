@@ -1,0 +1,986 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/ofo", "http://purl.org/ontology/service", "http://edamontology.org", "http://www.w3.org/2000/01/rdf-schema", "https://schema.org", "http://reference.data.gov.au/def/datasetOntology", "http://www.w3.org/ns/prov", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "https://www.w3.org/ns/dcat", "http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology" ],
+    "iri" : "http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology",
+    "version" : "1.0.0",
+    "labels" : {
+      "undefined" : "FUTURAL ontology"
+    },
+    "comments" : {
+      "undefined" : "This is the 1st version of the FUTURAL ontology."
+    },
+    "other" : {
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/ns/prov#Activity",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Activity",
+      "en" : "Activity"
+    },
+    "comment" : {
+      "en" : "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."
+    },
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://schema.org/DataDownload",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataDownload",
+      "en" : "DataDownload"
+    },
+    "comment" : {
+      "en" : "All or part of a Dataset in downloadable form."
+    },
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/ofo#Feedback",
+    "baseIri" : "https://w3id.org/ofo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Feedback",
+      "en" : "Feedback"
+    },
+    "comment" : {
+      "en" : "An act of producing a statement of opinion on the state of a property."
+    },
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://schema.org/Language",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Language",
+      "en" : "Language"
+    },
+    "comment" : {
+      "en" : "Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in BCP 47 can be used via the alternateName property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using ComputerLanguage."
+    },
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://schema.org/SearchAction",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SearchAction",
+      "en" : "SearchAction"
+    },
+    "comment" : {
+      "en" : "The act of searching for an object."
+    },
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Person",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "comment" : {
+      "en" : "Person agents are people."
+    },
+    "attributes" : [ "external" ],
+    "id" : "26",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://schema.org/Action",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Action",
+      "en" : "Action"
+    },
+    "comment" : {
+      "en" : "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role."
+    },
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Agent",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent",
+      "en" : "Agent"
+    },
+    "subClasses" : [ "26", "34", "36" ],
+    "comment" : {
+      "en" : "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#SoftwareAgent",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SoftwareAgent",
+      "en" : "SoftwareAgent"
+    },
+    "comment" : {
+      "en" : "A software agent is running software."
+    },
+    "attributes" : [ "external" ],
+    "id" : "36",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://purl.org/ontology/service#Service",
+    "baseIri" : "http://purl.org/ontology/service",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Service",
+      "en" : "Service"
+    },
+    "comment" : {
+      "en" : "A service is some action that is done for someone."
+    },
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://schema.org/ImageObject",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ImageObject",
+      "en" : "ImageObject"
+    },
+    "comment" : {
+      "en" : "An image file."
+    },
+    "attributes" : [ "external" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://reference.data.gov.au/def/datasetOntology#Timelnterval",
+    "baseIri" : "http://reference.data.gov.au/def/datasetOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Timelnterval",
+      "en" : "Timelnterval"
+    },
+    "comment" : {
+      "en" : "A Time Interval describes a time period (interval) during which data was collected or observations were made that are described in the Dataset."
+    },
+    "attributes" : [ "external" ],
+    "id" : "45"
+  }, {
+    "iri" : "https://schema.org/Dataset",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset",
+      "en" : "Dataset"
+    },
+    "comment" : {
+      "en" : "A body of structured information describing some topic(s) of interest."
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "48",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://purl.org/ontology/service#ServiceConsumer",
+    "baseIri" : "http://purl.org/ontology/service",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceConsumer",
+      "en" : "ServiceConsumer"
+    },
+    "comment" : {
+      "en" : "A service consumer is an entity that requests or consumes a Service."
+    },
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "anyURI"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "anyURI"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "18",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "38",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "29",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://schema.org/DefinedTerm",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DefinedTerm",
+      "en" : "DefinedTerm"
+    },
+    "comment" : {
+      "en" : "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term."
+    },
+    "attributes" : [ "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "22",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://purl.org/ontology/service#ServiceProvider",
+    "baseIri" : "http://purl.org/ontology/service",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceProvider",
+      "en" : "ServiceProvider"
+    },
+    "comment" : {
+      "en" : "A service provider is an entity that is responsible for providing a Service."
+    },
+    "attributes" : [ "external" ],
+    "id" : "41"
+  }, {
+    "iri" : "https://schema.org/Place",
+    "baseIri" : "https://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Place",
+      "en" : "Place"
+    },
+    "comment" : {
+      "en" : "Entities that have a somewhat fixed, physical extension."
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Organization",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization",
+      "en" : "Organization"
+    },
+    "comment" : {
+      "en" : "An organization is a social or legal institution such as a company, society, etc."
+    },
+    "attributes" : [ "external" ],
+    "id" : "34",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://edamontology.org/data_3786",
+    "baseIri" : "http://edamontology.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "data_3786",
+      "en" : "Query script"
+    },
+    "comment" : {
+      "en" : "A structured query, in form of a script, that defines a database search task."
+    },
+    "attributes" : [ "external" ],
+    "id" : "9"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "55",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "61",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://schema.org/creator",
+    "baseIri" : "https://schema.org",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "creator",
+      "en" : "creator"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://schema.org/areaServed",
+    "baseIri" : "https://schema.org",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "areaServed",
+      "en" : "areaServed"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The geographic area where a service or offered item is provided."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://schema.org/query",
+    "baseIri" : "https://schema.org",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "query",
+      "en" : "query"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "A sub property of instrument. The query used on this action."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasStartedBy",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "wasStartedBy",
+      "en" : "wasStartedBy"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Start is when an activity is deemed to have been started by an entity, known as trigger. The activity did not exist before its start. Any usage, generation, or invalidation involving an activity follows the activity's start. A start may refer to a trigger entity that set off the activity, or to an activity, known as starter, that generated the trigger."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://schema.org/dateCreated",
+    "baseIri" : "https://schema.org",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "dateCreated",
+      "en" : "dateCreated"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "The date on which the CreativeWork was created or the item was added to a DataFeed."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://schema.org/license",
+    "baseIri" : "https://schema.org",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "license",
+      "en" : "license"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "A license document that applies to this content, typically indicated by URL."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://schema.org/size",
+    "baseIri" : "https://schema.org",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "size",
+      "en" : "size"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://schema.org/abstract",
+    "baseIri" : "https://schema.org",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "abstract",
+      "en" : "abstract"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "An abstract is a short description that summarizes a CreativeWork."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasAssociatedWith",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "wasAssociatedWith",
+      "en" : "wasAssociatedWith"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://purl.org/ontology/service#consumedBy",
+    "inverse" : "25",
+    "baseIri" : "http://purl.org/ontology/service",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "consumedBy",
+      "en" : "consumedBy"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Relates a Service instance that is consumed by a ServiceConsumer instance to this service consumer."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://schema.org/keywords",
+    "baseIri" : "https://schema.org",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "keywords",
+      "en" : "keywords"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://schema.org/publisher",
+    "baseIri" : "https://schema.org",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "publisher",
+      "en" : "publisher"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "The publisher of the creative work."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://www.w3.org/ns/dcat#servesdataset",
+    "baseIri" : "https://www.w3.org/ns/dcat",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "servesdataset",
+      "en" : "servesdataset"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "A collection of data that this data service can distribute."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "32"
+  }, {
+    "iri" : "https://schema.org/affiliation",
+    "baseIri" : "https://schema.org",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "affiliation",
+      "en" : "affiliation"
+    },
+    "domain" : "26",
+    "comment" : {
+      "en" : "An organization that this person is affiliated with. For example, a school/university, a club, or a team."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "33"
+  }, {
+    "iri" : "https://schema.org/inLanguage",
+    "baseIri" : "https://schema.org",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "inLanguage",
+      "en" : "inLanguage"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://schema.org/version",
+    "baseIri" : "https://schema.org",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "version",
+      "en" : "version"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "The version of the CreativeWork embodied by a specified resource."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "37"
+  }, {
+    "range" : "2",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://purl.org/ontology/service#providedBy",
+    "inverse" : "42",
+    "baseIri" : "http://purl.org/ontology/service",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "providedBy"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Relates a Service instance that is provided by a ServiceProvider instance to this service provider. In most cases this property can be used interchangeable with schema:provider."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "40"
+  }, {
+    "iri" : "https://schema.org/distribution",
+    "baseIri" : "https://schema.org",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "distribution",
+      "en" : "distribution"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also DCAT on this point). Different distributions might include or exclude different subsets of the entire dataset, for example."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "43"
+  }, {
+    "iri" : "http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent",
+    "baseIri" : "http://reference.data.gov.au/def/datasetOntology",
+    "range" : "45",
+    "label" : {
+      "IRI-based" : "hasTemporalExtent",
+      "en" : "hasTemporalExtent"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Temporal extent corresponds to the time interval within which all items in the dataset occur."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://schema.org/dateModified",
+    "baseIri" : "https://schema.org",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "dateModified",
+      "en" : "dateModified"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "47"
+  }, {
+    "iri" : "https://w3id.org/ofo#givesFeedback",
+    "baseIri" : "https://w3id.org/ofo",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "givesFeedback",
+      "en" : "givesFeedback"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "Relationship between a person and the feedback given by this person."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "50"
+  }, {
+    "range" : "2",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "51"
+  }, {
+    "range" : "2",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "52"
+  }, {
+    "iri" : "https://schema.org/potentialAction",
+    "baseIri" : "https://schema.org",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "potentialAction",
+      "en" : "potentialAction"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "53"
+  }, {
+    "iri" : "https://schema.org/diagram",
+    "baseIri" : "https://schema.org",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "diagram",
+      "en" : "diagram"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy",
+    "baseIri" : "http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "http://www.w3.org/ns/prov%23wasGeneratedBy",
+      "en" : "wasGeneratedBy"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "55"
+  }, {
+    "iri" : "https://schema.org/comment",
+    "baseIri" : "https://schema.org",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "comment",
+      "en" : "comment"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Comments, typically from users."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "56"
+  }, {
+    "iri" : "http://purl.org/dc/terms/format",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "format",
+      "en" : "format"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "The file format, physical medium, or dimensions of the resource."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "57"
+  }, {
+    "iri" : "https://schema.org/downloadUrl",
+    "baseIri" : "https://schema.org",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "downloadUrl",
+      "en" : "downloadUrl"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "If the file can be downloaded, URL to download the binary."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://purl.org/ontology/service#consumes",
+    "baseIri" : "http://purl.org/ontology/service",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "consumes",
+      "en" : "consumes"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "Relates a ServiceConsumer instance that consumes a Service instance to this service."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://schema.org/contentLocation",
+    "baseIri" : "https://schema.org",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "contentLocation",
+      "en" : "contentLocation"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "The location depicted or described in the content. For example, the location in a photograph or painting."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "59"
+  }, {
+    "iri" : "https://schema.org/about",
+    "inverse" : "61",
+    "baseIri" : "https://schema.org",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "about",
+      "en" : "about"
+    },
+    "domain" : "9",
+    "comment" : {
+      "en" : "The subject matter of the content."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "60"
+  }, {
+    "iri" : "http://purl.org/ontology/service#provides",
+    "baseIri" : "http://purl.org/ontology/service",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "provides",
+      "en" : "provides"
+    },
+    "domain" : "41",
+    "comment" : {
+      "en" : "Relates a ServiceProvider instance that provides a Service instance to this service."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://schema.org/subjectOf",
+    "baseIri" : "https://schema.org",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "subjectOf",
+      "en" : "subjectOf"
+    },
+    "domain" : "30",
+    "comment" : {
+      "en" : "A CreativeWork or Event about this Thing."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "61"
+  } ]
+}

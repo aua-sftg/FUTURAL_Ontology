@@ -1,0 +1,527 @@
+@prefix : <http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology> .
+
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology> rdf:type owl:Ontology ;
+                                                                             owl:versionIRI <http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology/1.0.0> ;
+                                                                             rdfs:comment "This is the 1st version of the FUTURAL ontology." ;
+                                                                             rdfs:label "FUTURAL ontology" ;
+                                                                             owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/format
+<http://purl.org/dc/terms/format> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <https://schema.org/DataDownload> ;
+                                  rdfs:range <https://schema.org/DefinedTerm> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://purl.org/dc/terms/format> ;
+                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass <https://schema.org/DefinedTerm>
+                                             ] ;
+                                  rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
+                                  rdfs:label "format"@en .
+
+
+###  http://purl.org/ontology/service#consumedBy
+<http://purl.org/ontology/service#consumedBy> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <http://purl.org/ontology/service#consumes> ;
+                                              rdfs:domain <http://purl.org/ontology/service#Service> ;
+                                              rdfs:range <http://purl.org/ontology/service#ServiceConsumer> ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://purl.org/ontology/service#consumedBy> ;
+                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass <http://purl.org/ontology/service#ServiceConsumer>
+                                                         ] ;
+                                              rdfs:comment "Relates a Service instance that is consumed by a ServiceConsumer instance to this service consumer."@en ;
+                                              rdfs:label "consumedBy"@en .
+
+
+###  http://purl.org/ontology/service#consumes
+<http://purl.org/ontology/service#consumes> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://purl.org/ontology/service#ServiceConsumer> ;
+                                            rdfs:range <http://purl.org/ontology/service#Service> ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://purl.org/ontology/service#consumes> ;
+                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass <http://purl.org/ontology/service#Service>
+                                                       ] ;
+                                            rdfs:comment "Relates a ServiceConsumer instance that consumes a Service instance to this service."@en ;
+                                            rdfs:label "consumes"@en .
+
+
+###  http://purl.org/ontology/service#providedBy
+<http://purl.org/ontology/service#providedBy> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <http://purl.org/ontology/service#provides> ;
+                                              rdfs:domain <http://purl.org/ontology/service#Service> ;
+                                              rdfs:range <http://purl.org/ontology/service#ServiceProvider> ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://purl.org/ontology/service#providedBy> ;
+                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass <http://purl.org/ontology/service#ServiceProvider>
+                                                         ] ;
+                                              rdfs:comment "Relates a Service instance that is provided by a ServiceProvider instance to this service provider. In most cases this property can be used interchangeable with schema:provider."@en .
+
+
+###  http://purl.org/ontology/service#provides
+<http://purl.org/ontology/service#provides> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://purl.org/ontology/service#ServiceProvider> ;
+                                            rdfs:range <http://purl.org/ontology/service#Service> ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://purl.org/ontology/service#provides> ;
+                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass <http://purl.org/ontology/service#Service>
+                                                       ] ;
+                                            rdfs:comment "Relates a ServiceProvider instance that provides a Service instance to this service."@en ;
+                                            rdfs:label "provides"@en .
+
+
+###  http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent
+<http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:domain <https://schema.org/Dataset> ;
+                                                                     rdfs:range <http://reference.data.gov.au/def/datasetOntology#Timelnterval> ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://reference.data.gov.au/def/datasetOntology#hasTemporalExtent> ;
+                                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                  owl:onClass <http://reference.data.gov.au/def/datasetOntology#Timelnterval>
+                                                                                ] ;
+                                                                     rdfs:comment "Temporal extent corresponds to the time interval within which all items in the dataset occur."@en ;
+                                                                     rdfs:label "hasTemporalExtent"@en .
+
+
+###  http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy
+<http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> rdf:type owl:ObjectProperty ;
+                                                                                                                       rdfs:domain <https://schema.org/Dataset> ;
+                                                                                                                       rdfs:range <http://www.w3.org/ns/prov#Activity> ,
+                                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                                    owl:onProperty <http://www.semanticweb.org/herculespan/ontologies/2024/4/FUTURAL_ontology#http://www.w3.org/ns/prov%23wasGeneratedBy> ;
+                                                                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                                    owl:onClass <http://www.w3.org/ns/prov#Activity>
+                                                                                                                                  ] ;
+                                                                                                                       rdfs:comment "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation."@en ;
+                                                                                                                       rdfs:label "wasGeneratedBy"@en .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                              rdfs:range <http://www.w3.org/ns/prov#Agent> ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass <http://www.w3.org/ns/prov#Agent>
+                                                         ] ;
+                                              rdfs:comment "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity."@en ;
+                                              rdfs:label "wasAssociatedWith"@en .
+
+
+###  http://www.w3.org/ns/prov#wasStartedBy
+<http://www.w3.org/ns/prov#wasStartedBy> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://schema.org/SearchAction> ;
+                                         rdfs:range <http://purl.org/ontology/service#ServiceConsumer> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.w3.org/ns/prov#wasStartedBy> ;
+                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass <http://purl.org/ontology/service#ServiceConsumer>
+                                                    ] ;
+                                         rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger. The activity did not exist before its start. Any usage, generation, or invalidation involving an activity follows the activity's start. A start may refer to a trigger entity that set off the activity, or to an activity, known as starter, that generated the trigger."@en ;
+                                         rdfs:label "wasStartedBy"@en .
+
+
+###  https://schema.org/about
+<https://schema.org/about> rdf:type owl:ObjectProperty ;
+                           owl:inverseOf <https://schema.org/keywords> ,
+                                         <https://schema.org/subjectOf> ;
+                           rdfs:domain <http://edamontology.org/data_3786> ;
+                           rdfs:range <https://schema.org/DefinedTerm> ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty <https://schema.org/about> ;
+                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass <https://schema.org/DefinedTerm>
+                                      ] ;
+                           rdfs:comment "The subject matter of the content."@en ;
+                           rdfs:label "about"@en .
+
+
+###  https://schema.org/affiliation
+<https://schema.org/affiliation> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <http://www.w3.org/ns/prov#Person> ;
+                                 rdfs:range <http://www.w3.org/ns/prov#Organization> ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <https://schema.org/affiliation> ;
+                                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass <http://www.w3.org/ns/prov#Organization>
+                                            ] ;
+                                 rdfs:comment "An organization that this person is affiliated with. For example, a school/university, a club, or a team."@en ;
+                                 rdfs:label "affiliation"@en .
+
+
+###  https://schema.org/areaServed
+<https://schema.org/areaServed> rdf:type owl:ObjectProperty ;
+                                rdfs:domain <http://purl.org/ontology/service#Service> ;
+                                rdfs:range <https://schema.org/Place> ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://schema.org/areaServed> ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <https://schema.org/Place>
+                                           ] ;
+                                rdfs:comment "The geographic area where a service or offered item is provided."@en ;
+                                rdfs:label "areaServed"@en .
+
+
+###  https://schema.org/comment
+<https://schema.org/comment> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <https://schema.org/Dataset> ;
+                             rdfs:range <https://w3id.org/ofo#Feedback> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://schema.org/comment> ;
+                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass <https://w3id.org/ofo#Feedback>
+                                        ] ;
+                             rdfs:comment "Comments, typically from users."@en ;
+                             rdfs:label "comment"@en .
+
+
+###  https://schema.org/contentLocation
+<https://schema.org/contentLocation> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <https://schema.org/Dataset> ;
+                                     rdfs:range <https://schema.org/Place> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://schema.org/contentLocation> ;
+                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass <https://schema.org/Place>
+                                                ] ;
+                                     rdfs:comment "The location depicted or described in the content. For example, the location in a photograph or painting."@en ;
+                                     rdfs:label "contentLocation"@en .
+
+
+###  https://schema.org/creator
+<https://schema.org/creator> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <https://schema.org/Dataset> ;
+                             rdfs:range <http://www.w3.org/ns/prov#Agent> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://schema.org/creator> ;
+                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass <http://www.w3.org/ns/prov#Agent>
+                                        ] ;
+                             rdfs:comment "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork."@en ;
+                             rdfs:label "creator"@en .
+
+
+###  https://schema.org/diagram
+<https://schema.org/diagram> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <https://schema.org/Dataset> ;
+                             rdfs:range <https://schema.org/ImageObject> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://schema.org/diagram> ;
+                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass <https://schema.org/ImageObject>
+                                        ] ;
+                             rdfs:comment "An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures."@en ;
+                             rdfs:label "diagram"@en .
+
+
+###  https://schema.org/distribution
+<https://schema.org/distribution> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <https://schema.org/Dataset> ;
+                                  rdfs:range <https://schema.org/DataDownload> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://schema.org/distribution> ;
+                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass <https://schema.org/DataDownload>
+                                             ] ;
+                                  rdfs:comment "A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also DCAT on this point). Different distributions might include or exclude different subsets of the entire dataset, for example."@en ;
+                                  rdfs:label "distribution"@en .
+
+
+###  https://schema.org/inLanguage
+<https://schema.org/inLanguage> rdf:type owl:ObjectProperty ;
+                                rdfs:domain <https://schema.org/Dataset> ;
+                                rdfs:range <https://schema.org/Language> ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://schema.org/inLanguage> ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <https://schema.org/Language>
+                                           ] ;
+                                rdfs:comment "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en ;
+                                rdfs:label "inLanguage"@en .
+
+
+###  https://schema.org/keywords
+<https://schema.org/keywords> rdf:type owl:ObjectProperty ;
+                              rdfs:range <https://schema.org/DefinedTerm> ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <https://schema.org/keywords> ;
+                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass <https://schema.org/DefinedTerm>
+                                         ] ;
+                              rdfs:comment "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property."@en ;
+                              rdfs:label "keywords"@en .
+
+
+###  https://schema.org/potentialAction
+<https://schema.org/potentialAction> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <https://schema.org/Dataset> ;
+                                     rdfs:range <https://schema.org/Action> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://schema.org/potentialAction> ;
+                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass <https://schema.org/Action>
+                                                ] ;
+                                     rdfs:comment "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role."@en ;
+                                     rdfs:label "potentialAction"@en .
+
+
+###  https://schema.org/publisher
+<https://schema.org/publisher> rdf:type owl:ObjectProperty ;
+                               rdfs:domain <https://schema.org/Dataset> ;
+                               rdfs:range <http://www.w3.org/ns/prov#Agent> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://schema.org/publisher> ;
+                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass <http://www.w3.org/ns/prov#Agent>
+                                          ] ;
+                               rdfs:comment "The publisher of the creative work."@en ;
+                               rdfs:label "publisher"@en .
+
+
+###  https://schema.org/query
+<https://schema.org/query> rdf:type owl:ObjectProperty ;
+                           rdfs:domain <https://schema.org/SearchAction> ;
+                           rdfs:range <http://edamontology.org/data_3786> ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty <https://schema.org/query> ;
+                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass <http://edamontology.org/data_3786>
+                                      ] ;
+                           rdfs:comment "A sub property of instrument. The query used on this action."@en ;
+                           rdfs:label "query"@en .
+
+
+###  https://schema.org/subjectOf
+<https://schema.org/subjectOf> rdf:type owl:ObjectProperty ;
+                               rdfs:domain <https://schema.org/DefinedTerm> ;
+                               rdfs:range <https://schema.org/Dataset> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://schema.org/subjectOf> ;
+                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass <https://schema.org/Dataset>
+                                          ] ;
+                               rdfs:comment "A CreativeWork or Event about this Thing."@en ;
+                               rdfs:label "subjectOf"@en .
+
+
+###  https://w3id.org/ofo#givesFeedback
+<https://w3id.org/ofo#givesFeedback> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://purl.org/ontology/service#ServiceConsumer> ;
+                                     rdfs:range <https://w3id.org/ofo#Feedback> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://w3id.org/ofo#givesFeedback> ;
+                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass <https://w3id.org/ofo#Feedback>
+                                                ] ;
+                                     rdfs:comment "Relationship between a person and the feedback given by this person."@en ;
+                                     rdfs:label "givesFeedback"@en .
+
+
+###  https://www.w3.org/ns/dcat#servesdataset
+<https://www.w3.org/ns/dcat#servesdataset> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://purl.org/ontology/service#Service> ;
+                                           rdfs:range <https://schema.org/Dataset> ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://www.w3.org/ns/dcat#servesdataset> ;
+                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass <https://schema.org/Dataset>
+                                                      ] ;
+                                           rdfs:comment "A collection of data that this data service can distribute."@en ;
+                                           rdfs:label "servesdataset"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.org/abstract
+<https://schema.org/abstract> rdf:type owl:DatatypeProperty ;
+                              rdfs:domain <https://schema.org/DataDownload> ;
+                              rdfs:range xsd:string ;
+                              rdfs:comment "An abstract is a short description that summarizes a CreativeWork."@en ;
+                              rdfs:label "abstract"@en .
+
+
+###  https://schema.org/dateCreated
+<https://schema.org/dateCreated> rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain <https://schema.org/DataDownload> ;
+                                 rdfs:range xsd:dateTime ;
+                                 rdfs:comment "The date on which the CreativeWork was created or the item was added to a DataFeed."@en ;
+                                 rdfs:label "dateCreated"@en .
+
+
+###  https://schema.org/dateModified
+<https://schema.org/dateModified> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <https://schema.org/DataDownload> ;
+                                  rdfs:range xsd:dateTime ;
+                                  rdfs:comment "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en ;
+                                  rdfs:label "dateModified"@en .
+
+
+###  https://schema.org/downloadUrl
+<https://schema.org/downloadUrl> rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain <https://schema.org/DataDownload> ;
+                                 rdfs:range xsd:anyURI ;
+                                 rdfs:comment "If the file can be downloaded, URL to download the binary."@en ;
+                                 rdfs:label "downloadUrl"@en .
+
+
+###  https://schema.org/license
+<https://schema.org/license> rdf:type owl:DatatypeProperty ;
+                             rdfs:domain <https://schema.org/DataDownload> ;
+                             rdfs:range xsd:anyURI ;
+                             rdfs:comment "A license document that applies to this content, typically indicated by URL."@en ;
+                             rdfs:label "license"@en .
+
+
+###  https://schema.org/size
+<https://schema.org/size> rdf:type owl:DatatypeProperty ;
+                          rdfs:domain <https://schema.org/DataDownload> ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable."@en ;
+                          rdfs:label "size"@en .
+
+
+###  https://schema.org/version
+<https://schema.org/version> rdf:type owl:DatatypeProperty ;
+                             rdfs:domain <https://schema.org/DataDownload> ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "The version of the CreativeWork embodied by a specified resource."@en ;
+                             rdfs:label "version"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://edamontology.org/data_3786
+<http://edamontology.org/data_3786> rdf:type owl:Class ;
+                                    rdfs:comment "A structured query, in form of a script, that defines a database search task."@en ;
+                                    rdfs:label "Query script"@en .
+
+
+###  http://purl.org/ontology/service#Service
+<http://purl.org/ontology/service#Service> rdf:type owl:Class ;
+                                           rdfs:comment "A service is some action that is done for someone."@en ;
+                                           rdfs:label "Service"@en .
+
+
+###  http://purl.org/ontology/service#ServiceConsumer
+<http://purl.org/ontology/service#ServiceConsumer> rdf:type owl:Class ;
+                                                   rdfs:comment "A service consumer is an entity that requests or consumes a Service."@en ;
+                                                   rdfs:label "ServiceConsumer"@en .
+
+
+###  http://purl.org/ontology/service#ServiceProvider
+<http://purl.org/ontology/service#ServiceProvider> rdf:type owl:Class ;
+                                                   rdfs:comment "A service provider is an entity that is responsible for providing a Service."@en ;
+                                                   rdfs:label "ServiceProvider"@en .
+
+
+###  http://reference.data.gov.au/def/datasetOntology#Timelnterval
+<http://reference.data.gov.au/def/datasetOntology#Timelnterval> rdf:type owl:Class ;
+                                                                rdfs:comment "A Time Interval describes a time period (interval) during which data was collected or observations were made that are described in the Dataset."@en ;
+                                                                rdfs:label "Timelnterval"@en .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class ;
+                                     rdfs:comment "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en ;
+                                     rdfs:label "Activity"@en .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class ;
+                                  rdfs:comment "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."@en ;
+                                  rdfs:label "Agent"@en .
+
+
+###  http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                         rdfs:comment "An organization is a social or legal institution such as a company, society, etc."@en ;
+                                         rdfs:label "Organization"@en .
+
+
+###  http://www.w3.org/ns/prov#Person
+<http://www.w3.org/ns/prov#Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                   rdfs:comment "Person agents are people."@en ;
+                                   rdfs:label "Person"@en .
+
+
+###  http://www.w3.org/ns/prov#SoftwareAgent
+<http://www.w3.org/ns/prov#SoftwareAgent> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                          rdfs:comment "A software agent is running software."@en ;
+                                          rdfs:label "SoftwareAgent"@en .
+
+
+###  https://schema.org/Action
+<https://schema.org/Action> rdf:type owl:Class ;
+                            rdfs:comment "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role."@en ;
+                            rdfs:label "Action"@en .
+
+
+###  https://schema.org/DataDownload
+<https://schema.org/DataDownload> rdf:type owl:Class ;
+                                  rdfs:comment "All or part of a Dataset in downloadable form."@en ;
+                                  rdfs:label "DataDownload"@en .
+
+
+###  https://schema.org/Dataset
+<https://schema.org/Dataset> rdf:type owl:Class ;
+                             rdfs:comment "A body of structured information describing some topic(s) of interest."@en ;
+                             rdfs:label "Dataset"@en .
+
+
+###  https://schema.org/DefinedTerm
+<https://schema.org/DefinedTerm> rdf:type owl:Class ;
+                                 rdfs:comment "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term."@en ;
+                                 rdfs:label "DefinedTerm"@en .
+
+
+###  https://schema.org/ImageObject
+<https://schema.org/ImageObject> rdf:type owl:Class ;
+                                 rdfs:comment "An image file."@en ;
+                                 rdfs:label "ImageObject"@en .
+
+
+###  https://schema.org/Language
+<https://schema.org/Language> rdf:type owl:Class ;
+                              rdfs:comment "Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in BCP 47 can be used via the alternateName property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using ComputerLanguage."@en ;
+                              rdfs:label "Language"@en .
+
+
+###  https://schema.org/Place
+<https://schema.org/Place> rdf:type owl:Class ;
+                           rdfs:comment "Entities that have a somewhat fixed, physical extension."@en ;
+                           rdfs:label "Place"@en .
+
+
+###  https://schema.org/SearchAction
+<https://schema.org/SearchAction> rdf:type owl:Class ;
+                                  rdfs:comment "The act of searching for an object."@en ;
+                                  rdfs:label "SearchAction"@en .
+
+
+###  https://w3id.org/ofo#Feedback
+<https://w3id.org/ofo#Feedback> rdf:type owl:Class ;
+                                rdfs:comment "An act of producing a statement of opinion on the state of a property."@en ;
+                                rdfs:label "Feedback"@en .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
